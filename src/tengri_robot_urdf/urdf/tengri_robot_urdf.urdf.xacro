@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="tengri_robot_urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="world"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0081614 5.1099E-05 0.035297"
+        rpy="0 0 0" />
+      <mass
+        value="0.97974" />
+      <inertia
+        ixx="0.0014534"
+        ixy="1.0663E-06"
+        ixz="-2.1094E-05"
+        iyy="0.0014771"
+        iyz="-3.4449E-10"
+        izz="0.0028624" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.00053204 4.082E-06 -0.0013621"
+        rpy="0 0 0" />
+      <mass
+        value="0.56984" />
+      <inertia
+        ixx="0.00024122"
+        ixy="1.0045E-06"
+        ixz="1.8665E-06"
+        iyy="0.00018334"
+        iyz="-4.805E-05"
+        izz="0.00021426" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.031896 0 0.108"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.3562"
+      upper="2.3562"
+      effort="350"
+      velocity="0.2618" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.065 -3.5627E-09 0.0003498"
+        rpy="0 0 0" />
+      <mass
+        value="0.74616" />
+      <inertia
+        ixx="0.00023225"
+        ixy="1.8584E-10"
+        ixz="7.5381E-11"
+        iyy="0.002327"
+        iyz="-1.9043E-11"
+        izz="0.0022933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.037"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="350"
+      velocity="0.2618" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.0657 -8.0744E-09 0.00017686"
+        rpy="0 0 0" />
+      <mass
+        value="0.56731" />
+      <inertia
+        ixx="0.00017985"
+        ixy="2.8825E-10"
+        ixz="5.4947E-05"
+        iyy="0.00087367"
+        iyz="-3.1466E-11"
+        izz="0.00081538" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.13 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="350"
+      velocity="0.2618" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.026848 -5.0403E-10 -3.3866E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.2507" />
+      <inertia
+        ixx="8.0063E-05"
+        ixy="6.5944E-12"
+        ixz="3.0854E-05"
+        iyy="0.00012549"
+        iyz="6.7447E-13"
+        izz="7.8808E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.11 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="350"
+      velocity="0.2618" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-1.9804E-18 0 -0.050385"
+        rpy="3.1416 0 0" />
+      <mass
+        value="0.37989" />
+      <inertia
+        ixx="0.00032663"
+        ixy="1.5055E-22"
+        ixz="-1.7537E-20"
+        iyy="0.00032663"
+        iyz="9.4503E-21"
+        izz="2.9517E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="3.1416 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/marker_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="3.1416 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tengri_robot_urdf/meshes/marker_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.052 0.09 0"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="100"
+      velocity="0.2618" />
+  </joint>
+
+  <link name="endeff">
+    <visual>
+      <geometry>
+         <box size="0.003 0.02 0.001"/>
+      </geometry>
+      <material name="blue"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0005"/>
+    </visual>
+  </link>
+
+  <joint name="joint6" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+      <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+      <parent link="link5"/>
+      <child link="endeff"/>
+   </joint>
+
+</robot>

@@ -1,0 +1,37 @@
+<launch>
+
+  <rosparam file="$(find tengri_robot_urdf_moveit_config)/config/trajectory_control.yaml" command="load"/>
+  
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find tengri_robot_urdf_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+  
+  <node name="six_robot_hardware_interface" pkg="tengri_robot_urdf" type="six_robot_hardware_interface" output="screen"/>
+
+  <node name="joint_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+		output="screen" args="/tengri_robot_urdf/joint_state_controller  
+		                      /tengri_robot_urdf/arm_joint_controller">
+  </node>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+  </node>
+  
+
+  <!--<node name="joint_controller" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="/tengri_robot_urdf/arm_joint_controller"/> -->
+
+ 
+
+  <include file="$(find tengri_robot_urdf_moveit_config)/launch/move_group.launch">
+  <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <include file="$(find tengri_robot_urdf_moveit_config)/launch/moveit_rviz.launch"/> 
+  
+  <!--<node name="simple_marker" pkg="tengri_robot_urdf" type="ik_marker.py" output="screen"  >
+  </node> -->
+    
+</launch>

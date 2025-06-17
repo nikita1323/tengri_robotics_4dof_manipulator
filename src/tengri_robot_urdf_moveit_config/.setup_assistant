@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: tengri_robot_urdf
+    relative_path: urdf/tengri_robot_urdf.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/tengri_robot_urdf.srdf
+  CONFIG:
+    author_name: mazhugich
+    author_email: mazhuga.nikita@icloud.com
+    generated_timestamp: 1713313340

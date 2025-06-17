@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+    
+  <rosparam file="$(find tengri_robot_urdf)/config/controllers.yaml" command="load"/>
+   
+  <arg name="model" default="$(find tengri_robot_urdf)/urdf/tengri_robot_urdf.urdf.xacro"/>
+  <arg name="gui" default="true" />
+  
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="six_robot_hardware_interface" pkg="tengri_robot_urdf" type="six_robot_hardware_interface" output="screen"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+  </node>
+  
+  <node name="rviz" pkg="rviz" type="rviz"/>
+    
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+        	/tengri_robot_urdf/joints_update
+            /tengri_robot_urdf/joint1
+            /tengri_robot_urdf/joint2
+            /tengri_robot_urdf/joint3
+            /tengri_robot_urdf/joint4
+            /tengri_robot_urdf/joint5
+            /tengri_robot_urdf/joint6
+        "/> 
+            <!-- /three_dof_planar_manipulator/joint6 -->
+</launch>
